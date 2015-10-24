@@ -6,4 +6,5 @@ A rails REST API for database storage and user authentication
 
 * Rails 4.2.4
 
+* Deploy using heroku tookit and git
 
