@@ -54,6 +54,6 @@ class StudygroupsController < ApplicationController
     end
 
     def studygroup_params
-      params.require(:studygroup).permit(:department, :class_number)
+      params.require(:studygroup).permit(:department, :class_number, :date, :time)
     end
 end
