@@ -10,3 +10,7 @@ Studygroup.create(department: "CS", class_number: 111, date: "11-31-15", time: "
   Studygroup.create(department: "MATH" , class_number: 101, date: "11-10-15", time: "11:00AM")
 
 User.create(Firstname: 'John', Lastname: 'Smith', Username: 'Root',email: 'root@admin', password: 'root')
+
+
+StudygroupsUser.create(studygroup_id: 1, user_id: 1);
+StudygroupsUser.create(studygroup_id: 2, user_id: 1);

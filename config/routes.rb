@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  resources :studygroups_users, except: [:new, :edit]
   resources :users, except: [:new, :edit]
   resources :studygroups, except: [:new, :edit]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   post '/login', to: 'users#login', as: :login
+  post '/mygroups', to: 'users#mygroups', as: :mygroups
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
