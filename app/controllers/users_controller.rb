@@ -6,10 +6,10 @@ class UsersController < ApplicationController
   # POST /mygroups
   # POST /mygroups.json
   def mygroups
-    @user
     @user = User.find_by(email: user_params[:email])
     @usergroups = @user.studygroups_users
     @mygroups = []
+
     @usergroups.each { |group|
       @studygroup = Studygroup.find_by(id: group.studygroup_id)
       @mygroups.push(@studygroup)
