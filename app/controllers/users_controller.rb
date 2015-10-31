@@ -12,7 +12,8 @@ class UsersController < ApplicationController
 
     @usergroups.each { |group|
       @studygroup = Studygroup.find_by(id: group.studygroup_id)
-      @mygroups.push(@studygroup)
+        @mygroups.push(@studygroup)
+
     }
     render json: @mygroups
   end
@@ -37,11 +38,12 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-
-    if @user.save
-      render json: @user, status: :created, location: @user
-    else
-      render json: @user.errors, status: :unprocessable_entity
+    if group.studygroup_id != @studygroup.id
+      if @user.save
+        render json: @user, status: :created, location: @user
+      else
+        render json: @user.errors, status: :unprocessable_entity
+      end
     end
   end
 
