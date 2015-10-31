@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   #POST /bool
   def login
     if User.find_by(email: user_params[:email]).try(:authenticate, user_params[:password])
-      render json: "true"
+      render json: User.find_by(email: user_params[:email])
     else
       render json: "false"
     end
