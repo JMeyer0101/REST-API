@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   post '/login', to: 'users#login', as: :login
   post '/mygroups', to: 'users#mygroups', as: :mygroups
+  post '/seekdestroy', to: 'studygroups_users#seekAndDestroy', as: :seekdestroy
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

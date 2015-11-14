@@ -42,9 +42,16 @@ class StudygroupsUsersController < ApplicationController
   # DELETE /studygroups_users/1
   # DELETE /studygroups_users/1.json
   def destroy
+
     @studygroups_user.destroy
 
     head :no_content
+  end
+
+  def seekAndDestroy
+    @studygroups_user = StudygroupsUser.find_by(studygroup_id: studygroups_user_params[:studygroup_id], user_id: studygroups_user_params[:user_id])
+    @studygroups_user.destroy
+
   end
 
   private
