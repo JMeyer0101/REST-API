@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :group_comments, except: [:new, :edit]
   resources :studygroups_users, except: [:new, :edit]
   resources :users, except: [:new, :edit]
   resources :studygroups, except: [:new, :edit]
@@ -7,6 +8,7 @@ Rails.application.routes.draw do
   post '/login', to: 'users#login', as: :login
   post '/mygroups', to: 'users#mygroups', as: :mygroups
   post '/seekdestroy', to: 'studygroups_users#seekAndDestroy', as: :seekdestroy
+  post '/groupchats', to: 'group_comments#groupchats', as: :groupchats
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
