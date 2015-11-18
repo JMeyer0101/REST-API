@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :group_comments, except: [:new, :edit]
   resources :studygroups_users, except: [:new, :edit]
   resources :users, except: [:new, :edit]
   resources :studygroups, except: [:new, :edit]
