@@ -3,12 +3,11 @@ class GroupCommentsController < ApplicationController
 
 
 
-  #get individual group
+  #POST individual group
   def groupchats
     @groupchat = []
     @group_comments = GroupComment.all
     @group_comments.each { |comment|
-      
       if (comment.studygroup_id == group_comment_params[:studygroup_id].to_f)
         @groupchat.push(comment)
       end
