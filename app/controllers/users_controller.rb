@@ -18,6 +18,17 @@ class UsersController < ApplicationController
     render json: @mygroups
   end
 
+  def setAdminUser
+    puts user_params[:email]
+    @user = User.find_by(email: user_params[:email])
+
+    @user.Admin = user_params[:Admin]
+    puts @user.Admin
+    
+
+    render json: "success"
+  end
+
 
   def index
     @users = User.all
@@ -79,6 +90,6 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:email, :password, :Firstname, :Lastname, :Username)
+      params.require(:user).permit(:email, :password, :Firstname, :Lastname, :Username, :Admin)
     end
 end

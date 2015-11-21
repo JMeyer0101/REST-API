@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151118030641) do
+ActiveRecord::Schema.define(version: 20151121021607) do
 
   create_table "group_comments", force: :cascade do |t|
     t.integer  "studygroup_id"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20151118030641) do
     t.string   "Firstname"
     t.string   "Lastname"
     t.string   "Username"
+    t.boolean  "Admin"
   end
 
 end

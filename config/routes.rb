@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post '/mygroups', to: 'users#mygroups', as: :mygroups
   post '/seekdestroy', to: 'studygroups_users#seekAndDestroy', as: :seekdestroy
   post '/groupchats', to: 'group_comments#groupchats', as: :groupchats
+  post '/setAdminUser', to: 'users#setAdminUser', as: :setAdminUser
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
