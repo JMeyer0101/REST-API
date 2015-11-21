@@ -22,11 +22,15 @@ class UsersController < ApplicationController
     puts user_params[:email]
     @user = User.find_by(email: user_params[:email])
 
-    @user.Admin = user_params[:Admin]
+    if @user.update(user_params)
+      head :no_content
+    else
+      render json: @user.errors, status: :unprocessable_entity
+    end
     puts @user.Admin
-    
 
-    render json: "success"
+
+    
   end
 
 
