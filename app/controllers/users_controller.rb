@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   # POST /mygroups.json
   def mygroups
     @user = User.find_by(email: user_params[:email])
+    puts "asdlkfjaldkfj ", user_params[:email], "dssdf"
     @usergroups = @user.studygroups_users
     @mygroups = []
 
@@ -30,7 +31,7 @@ class UsersController < ApplicationController
     puts @user.Admin
 
 
-    
+
   end
 
 
@@ -94,6 +95,6 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:email, :password, :Firstname, :Lastname, :Username, :Admin)
+      params.permit(:email, :password, :Firstname, :Lastname, :Username, :Admin)
     end
 end
