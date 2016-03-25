@@ -40,6 +40,7 @@ class UsersController < ApplicationController
 
     render json: @users
   end
+  
   #POST /login
   #POST /bool
   def login
@@ -95,6 +96,6 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.permit(:email, :password, :Firstname, :Lastname, :Username, :Admin)
+      params.require(:user).permit(:email, :password, :Firstname, :Lastname, :Username, :Admin)
     end
 end
