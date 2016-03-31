@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   # POST /mygroups.json
   def mygroups
     @user = User.find_by(email: user_params[:email])
-    puts "asdlkfjaldkfj ", user_params[:email], "dssdf"
+
     @usergroups = @user.studygroups_users
     @mygroups = []
 
@@ -40,13 +40,15 @@ class UsersController < ApplicationController
 
     render json: @users
   end
-  
+
   #POST /login
   #POST /bool
   def login
     if User.find_by(email: user_params[:email]).try(:authenticate, user_params[:password])
+      puts "GOTIT ", user_params[:email], "dssdf"
       render json: User.find_by(email: user_params[:email])
     else
+      puts "MISSEDIT ", user_params[:email], "dssdf"
       render json: "false"
     end
   end
