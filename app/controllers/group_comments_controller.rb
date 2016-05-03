@@ -3,7 +3,7 @@ class GroupCommentsController < ApplicationController
 
 
 
-  #POST individual group
+  #POST render specific group comments
   def groupchats
     @groupchat = []
     @group_comments = GroupComment.all

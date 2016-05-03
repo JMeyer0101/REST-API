@@ -15,3 +15,5 @@ User.create(Firstname: 'John', Lastname: 'Smith', Username: 'Root',email: 'root@
 StudygroupsUser.create(studygroup_id: 1, user_id: 1);
 StudygroupsUser.create(studygroup_id: 2, user_id: 1);
 StudygroupsUser.create(studygroup_id: 3, user_id: 1);
+
+GroupComment.create(comment: "hey dude", user: "Root");
